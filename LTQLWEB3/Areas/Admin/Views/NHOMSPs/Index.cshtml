@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LTQLWEB3.Models.NHOMSP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="header">
+    <ol class="breadcrumb">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Nhóm sản phẩm</a></li>
+        <li class="active">Danh sách nhóm sản phẩm</li>
+    </ol>
+</div>
+    @Html.ActionLink("Thêm mới", "Create")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNhomSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNhomSP)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNhomSP }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNhomSP })
+        </td>
+    </tr>
+}
+
+</table>

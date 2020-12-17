@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LTQLWEB3.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Trang chủ</h3>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    @Html.DisplayFor(model => item.TenSP)
+                    <img src="@Url.Content("~/Image/" + item.Anh)" style="height:200px; width:200px; margin: 10px" />
+                    <br />
+                    Giá: @Html.DisplayFor(model => item.DonGiaBan)
+                    <br />
+                    Số lượng: @Html.DisplayFor(model => item.SoLuong)
+                </div>
+            </div>
+        }
+    </div>
+</div>

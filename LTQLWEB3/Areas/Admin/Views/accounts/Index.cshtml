@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LTQLWEB3.Models.account>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+<div class="header">
+    <ol class="breadcrumb">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Tài khoản</a></li>
+        <li class="active">Danh sách tài khoản</li>
+    </ol>
+</div>
+
+    @Html.ActionLink("Thêm mới", "Create")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NHANVIEN.TenNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role.TenVaiTro)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.TenTK)
+        </th>*@
+        <th>Chức năng</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NHANVIEN.TenNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.TenVaiTro)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.TenTK)
+            </td>*@
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaTk }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTk }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaTk })
+            </td>
+        </tr>
+    }
+
+</table>

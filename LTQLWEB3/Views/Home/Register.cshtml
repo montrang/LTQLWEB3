@@ -1,0 +1,45 @@
+﻿@model LTQLWEB3.Models.KHACHHANG
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đăng ký tài khoản mới</h2>
+<div class="container">
+    <div class="col-lg-6">
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.LabelFor(kh => kh.MaKH, "Mã Khách Hàng:")
+                @Html.TextBoxFor(kh => kh.MaKH, new { @placeholder = "Mã Khách Hàng" , @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.TenKH, "Tên Khách Hàng:")
+                @Html.TextBoxFor(kh => kh.TenKH, new { @placeholder = "Tên Khách Hàng" , @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.DiaChi, "Địa Chỉ:")
+                @Html.TextBoxFor(kh => kh.DiaChi, new { @placeholder = "Địa Chỉ" , @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.SoDT, "Số Điện Thoại:")
+                @Html.TextBoxFor(kh => kh.SoDT, new { @placeholder = "Số Điện Thoại" , @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.Email, "Email:")
+                @Html.TextBoxFor(kh => kh.Email, new { @placeholder = "Email" , @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.PassWord, "PassWord:")
+                @Html.TextBoxFor(kh => kh.PassWord, new { @placeholder = "PassWord" , @class = "form-control" , @type = "PassWord"})
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.confirm_password, "Nhập Lại Mật Khẩu:")
+                @Html.TextBoxFor(kh => kh.confirm_password, new { @placeholder = "Nhập Lại Mật Khẩu" , @class = "form-control" })
+            </div>
+            <input type="submit" value="Đăng Ký" />
+    }
+    </div>
+    </div>
+

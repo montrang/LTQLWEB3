@@ -1,0 +1,94 @@
+﻿@model LTQLWEB3.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="header">
+    <ol class="breadcrumb">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li class="active">Chi tiêt sản phẩm</li>
+    </ol>
+</div>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NHOMSP.TenNhomSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHOMSP.TenNhomSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGiaNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HSD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HSD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
